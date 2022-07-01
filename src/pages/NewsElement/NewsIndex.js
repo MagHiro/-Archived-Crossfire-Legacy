@@ -20,7 +20,6 @@ function NewsIndex() {
         await axios
             .get(`https://crossfireapi.herokuapp.com/api/News/${id}`)
             .then((response) => {
-                (response.data.posts.id);
                 setJudul(response.data.posts.judul);
                 setBerita(response.data.posts.berita);
                 setImage_name(response.data.posts.image_name);

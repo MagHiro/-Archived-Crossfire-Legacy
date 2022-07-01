@@ -32,6 +32,7 @@ export default function Login1() {
                     navigate(0);
                 });
         } catch (error) {
+            // eslint-disable-next-line no-unused-expressions
             (error.response.data);
             SetMsg(error.response.data);
         }

@@ -15,6 +15,7 @@ function Home2() {
         {
             btns[i].addEventListener("click", function() 
             {
+                // eslint-disable-next-line no-unused-expressions
                 (document.querySelector('.menuActive')) ? document.querySelector('.menuActive').classList.remove('menuActive') : '';
                 this.classList.add('menuActive');
             });
