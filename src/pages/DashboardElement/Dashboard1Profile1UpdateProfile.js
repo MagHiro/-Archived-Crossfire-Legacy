@@ -32,6 +32,7 @@ function Dashboard1Profile1UpdateProfile() {
             });
             navigate("/dashboard/profile");
         } catch (error) {
+            // eslint-disable-next-line no-unused-expressions
             (error.data);
         }
     };
