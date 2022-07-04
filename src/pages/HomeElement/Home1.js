@@ -11,7 +11,7 @@ function Home1() {
             bgImageStyle={{ opacity: ".5" }}
             strength={0}
         >
-            <Container className="Home1">
+            <Container fluid className="Home1">
                     <h1>
                         <span style={{ color: "white" }}>Forget you're</span>
                         <span style={{ color: "#dd7c35" }}>somewhere else</span>

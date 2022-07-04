@@ -18,7 +18,7 @@ function Dashboard1() {
 
     const fetchData = async () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("https://crossfireapi.herokuapp.com/api/user").then((response) => {
+        await axios.get("http://localhost:8000/api/user").then((response) => {
             setUser(response.data);
         });
     };
@@ -48,7 +48,7 @@ function Dashboard1() {
 
     const logoutHandler = async () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.post("https://crossfireapi.herokuapp.com/api/logout").then(() => {
+        await axios.post("http://localhost:8000/api/logout").then(() => {
             Cookies.removeItem("token");
             navigate("/");
         });

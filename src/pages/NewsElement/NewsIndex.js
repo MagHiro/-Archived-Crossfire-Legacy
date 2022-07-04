@@ -18,7 +18,7 @@ function NewsIndex() {
 
     const getNews = async () => {
         await axios
-            .get(`https://crossfireapi.herokuapp.com/api/News/${id}`)
+            .get(`http://localhost:8000/api/news/${id}`)
             .then((response) => {
                 setJudul(response.data.posts.judul);
                 setBerita(response.data.posts.berita);
@@ -37,10 +37,10 @@ function NewsIndex() {
                 <title>CFL | {judul}</title>
             </Helmet>
             <News1 />
-            <Container className="NewsIndex">
+            <Container fluid className="NewsIndex">
                 <Card>
                 <h1>{judul}</h1>
-                    <img src={ "https://crossfireapi.herokuapp.com/uploads/" + image_name } />
+                    <img src={ "http://localhost:8000/uploads/" + image_name } />
                     <section>
                         <article dangerouslySetInnerHTML={{__html: berita}}></article>
                         <span>{getDate(Date(tanggal))}</span>

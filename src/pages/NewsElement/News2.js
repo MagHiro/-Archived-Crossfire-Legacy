@@ -13,7 +13,7 @@ function News2() {
 
     const getNews = async () => {
         await axios
-            .get(`https://crossfireapi.herokuapp.com/api/index?page=1`)
+            .get(`http://localhost:8000/api/index?page=1`)
             .then((response) => {
                 setPageCount(
                     Math.ceil(response.data.total / response.data.per_page)
@@ -25,7 +25,7 @@ function News2() {
     const handlePageClick = async (data) => {
         let currentPage = data.selected + 1;
         await axios
-            .get(`https://crossfireapi.herokuapp.com/api/index?page=${currentPage}`)
+            .get(`http://localhost:8000/api/index?page=${currentPage}`)
             .then((response) => {
                 setNews(response.data.data);
             });
@@ -40,7 +40,7 @@ function News2() {
             {news.map((news) => (
                 <Card key={news.id}>
                     <img
-                        src={"https://crossfireapi.herokuapp.com/uploads/" + news.image_name}
+                        src={"http://localhost:8000/uploads/" + news.image_name}
                     />
                     <section>
                         <h2>

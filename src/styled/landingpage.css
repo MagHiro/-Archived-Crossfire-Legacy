@@ -6,27 +6,32 @@
     font-style: normal;
 }
 
+body {
+    -webkit-overflow-scrolling: hidden;
+    background-color: #121212;
+    background-size: fit-content;
+}
+
 
 /* Standart Page Backround */
 .pageBG {
     background-color: #121212;
     background-size: fit-content;
     overflow: hidden;
-    max-height: 100%;
 }
 
 /* Spinner */
 .Puteran .spinner-border {
     width: 12rem;
     height: 12rem;
-margin: 50rem 50rem;
+    margin: 50rem 50rem;
 }
 
 .Puteran span {
     color: #dd7c35;
     font-family: "helmetregular";
     font-size: 2rem;
-    position: re;
+    position: relative;
     top: 505px;
     left: 666px;
 }
@@ -40,10 +45,13 @@ margin: 50rem 50rem;
     position: sticky;
     top: 0;
     z-index: 3;
+    font-family: "helmetregular", sans-serif;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    filter: drop-shadow(10px -15px 25px #dd7c35);
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: "helmetregular", sans-serif;
     font-weight: normal;
     font-size: 19px;
     color: #ebebeb;
@@ -64,6 +72,11 @@ margin: 50rem 50rem;
     background: linear-gradient(20deg,
             rgba(23, 23, 23, 1) 10%,
             rgba(221, 124, 53, 1) 200%);
+    top: 100%;
+    left: -40px;
+    margin-top: 0.125rem;
+    border: none;
+    border-radius: 10px;
 }
 
 .btn-primary {
@@ -169,7 +182,7 @@ a.btn.btn-primary:active:focus {
     font-weight: 400;
     text-align: center;
     color: rgb(236, 232, 232);
-    width: 100%;
+    width: 70%;
 }
 
 .btn-outline-light {
@@ -812,6 +825,7 @@ a.btn.btn-primary:active:focus {
             rgba(23, 23, 23, 1) 30%,
             rgba(221, 124, 53, 1) 200%);
     border: none;
+    box-shadow: 3px 3px 20px #212121;
 }
 
 .Register1 .card h1 {
@@ -869,6 +883,7 @@ a.btn.btn-primary:active:focus {
             rgba(23, 23, 23, 1) 30%,
             rgba(221, 124, 53, 1) 200%);
     border: none;
+    box-shadow: 3px 3px 20px #212121;
 }
 
 .Login1 .card h1 {
@@ -1053,6 +1068,12 @@ a.btn.btn-primary:active:focus {
 
 }
 
+.Dashboard1Profile1 .toast {
+    font-size: medium;
+    background-color: #d37c35;
+
+}
+
 /* Dashboard1Profile1Update */
 
 .Dashboard1Profile1Update .card {
@@ -1157,7 +1178,7 @@ a.btn.btn-primary:active:focus {
             rgba(23, 23, 23, 1) 30%,
             rgba(221, 124, 53, 1) 200%);
     width: 100%;
-    position: static;
+    position: relative;
     bottom: 0;
 }
 

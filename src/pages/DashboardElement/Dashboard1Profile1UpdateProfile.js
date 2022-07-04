@@ -13,7 +13,7 @@ function Dashboard1Profile1UpdateProfile() {
 
     const fetchData = async () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("https://crossfireapi.herokuapp.com/api/user").then((response) => {
+        await axios.get("http://localhost:8000/api/user").then((response) => {
             setUser(response.data);
         });
     };
@@ -26,7 +26,7 @@ function Dashboard1Profile1UpdateProfile() {
         e.preventDefault();
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         try {
-            await axios.post("https://crossfireapi.herokuapp.com/api/update", {
+            await axios.post("http://localhost:8000/api/update", {
                 password: password,
                 password_confirmation: password_confirmation,
             });

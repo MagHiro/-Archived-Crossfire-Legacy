@@ -25,11 +25,11 @@ export default function Login1() {
         // api call
         try {
             await axios
-                .post("https://crossfireapi.herokuapp.com/api/login", { username: username, password: password })
+                .post("http://localhost:8000/api/login", { username: username, password: password })
                 .then((response) => {
                     Cookies.setItem("token", response.data.token);
-                    navigate("/dashboard");
                     navigate(0);
+                    navigate("/dashboard");
                 });
         } catch (error) {
             // eslint-disable-next-line no-unused-expressions
@@ -77,8 +77,8 @@ export default function Login1() {
 
                 <section className="col mb-1 ">
                     <p>Do not have an account ? <a href="/register">Sign here</a></p>
-                    <span>{Msg.message}</span>
                     <button onClick={submitForm} className="btn btn-primary">Login</button>
+                    <span>{Msg.message}</span>
                 </section>
             </Card>
         </Parallax>

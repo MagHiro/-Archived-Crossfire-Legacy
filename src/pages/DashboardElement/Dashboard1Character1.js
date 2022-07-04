@@ -10,10 +10,12 @@ export default function Dashboard1Character1() {
 
     const fetchData = async () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("https://crossfireapi.herokuapp.com/api/user").then((response) => {
+        await axios.get("http://localhost:8000/api/user").then((response) => {
             setUser(response.data);
         });
     };
+
+    const rank = 104;
 
     useEffect(() => {
         fetchData();
@@ -28,7 +30,7 @@ export default function Dashboard1Character1() {
                 <tbody>
                     <tr>
                     <th scope="row">Rank</th>
-                    <td><img src={require('./../../assets/ranks/rank_104.jpg').default} width={30} height={30} /> Grand Marshall</td>
+                    <td><img src={require(`./../../assets/ranks/rank_${rank}.jpg`)} width={30} height={30} /> Grand Marshall</td>
                     </tr>
                     <tr>
                     <th scope="row">Exp</th>
