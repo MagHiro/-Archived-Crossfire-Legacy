@@ -12,6 +12,7 @@ const TNC = React.lazy(() => import("./pages/TNC"));
 const Register = React.lazy(() => import("./pages/Register"));
 const Login = React.lazy(() => import("./pages/Login"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const Verification = React.lazy(() => import("./pages/Verification"));
 const NewsIndex = React.lazy(() => import("./pages/NewsElement/NewsIndex"));
 const Navbar = React.lazy(() => import("./Navigasibar"));
 const Footer = React.lazy(() => import("./Footer"));
@@ -36,6 +37,7 @@ function App() {
                         <Route path="/signin" element={<Login />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/dashboard/profile" element={<Dashboard />} />
+                        <Route path="/Verification" element={<Verification />} />
                     </Routes>
 
                     <Footer />  

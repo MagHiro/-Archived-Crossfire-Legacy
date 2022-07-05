@@ -30,10 +30,6 @@ function Dashboard1() {
         };
     }, []);
 
-    const getDate = (date) => {
-        return date.split("T")[0];
-    };
-
     const padTo2Digits = (num) => {
         return num.toString().padStart(2, '0');
     };

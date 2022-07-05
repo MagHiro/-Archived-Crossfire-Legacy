@@ -27,9 +27,8 @@ export default function Login1() {
             await axios
                 .post("http://localhost:8000/api/login", { username: username, password: password })
                 .then((response) => {
-                    Cookies.setItem("token", response.data.token);
-                    navigate(0);
-                    navigate("/dashboard");
+                    Cookies.setItem("token", response.data.access_token);
+                    navigate(0 ,"/dashboard");
                 });
         } catch (error) {
             // eslint-disable-next-line no-unused-expressions
