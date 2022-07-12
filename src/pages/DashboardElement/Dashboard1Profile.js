@@ -1,6 +1,9 @@
 import React from "react";
 import Dashboard1Profile1 from "./Dashboard1Profile1";
 import Dashboard1Profile1UpdateProfile from "./Dashboard1Profile1UpdateProfile";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 
 function Dashboard1Profile() {
@@ -23,8 +26,8 @@ function Dashboard1Profile() {
             </ul>
 
             <div className="tab-content" id="myTabContent">
-                <div className="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><Dashboard1Profile1 /></div>
-                <div className="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabindex="0"><Dashboard1Profile1UpdateProfile /></div>
+                <div className="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0"><Dashboard1Profile1 /></div>
+                <div className="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabIndex="0"><Dashboard1Profile1UpdateProfile /></div>
             </div>
 
         </div>

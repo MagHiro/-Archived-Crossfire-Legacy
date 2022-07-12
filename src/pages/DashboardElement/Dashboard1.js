@@ -8,17 +8,17 @@ import Foto1 from './../../assets/cfl2.gif';
 import Dashboard1Profile from "./Dashboard1Profile";
 import Dashboard1Character from "./Dashboard1Character";
 import Dashboard1Recharge from "./Dashboard1Recharge";
-import axios from "axios";
+import Auth from "./../../Auth";
 
 function Dashboard1() {
 
+    const {http} = Auth();
     const [user, setUser] = useState({});
     const token = Cookies.getItem("token");
     const navigate = useNavigate();
 
     const fetchData = async () => {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("http://localhost:8000/api/user").then((response) => {
+        await http.post("/me").then((response) => {
             setUser(response.data);
         });
     };
@@ -43,8 +43,7 @@ function Dashboard1() {
     };
 
     const logoutHandler = async () => {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.post("http://localhost:8000/api/logout").then(() => {
+        await http.post("/logout").then(() => {
             Cookies.removeItem("token");
             navigate("/");
         });
@@ -60,13 +59,13 @@ function Dashboard1() {
                     <div className="nav nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <Card>
                                 <img src={Foto1} width={100} height={100} />
-                                <h3>{user.nickname || ''} ID {user.id || ''}</h3>
-                                <button type="button" className="btn btn-outline-primary">PLAYER</button>
+                                <h3>{user.nickname || 'No Nickname'}</h3>
+                                <button type="button" className="btn btn-outline-primary">ID {user.id || ''}</button>
                                 <span>Player Since {formatDate(new Date(user.created_at))}</span>
                         </Card>
                         <button className="nav-link active" id="v-pills-Profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Profile" type="button" role="tab" aria-controls="v-pills-Profile" aria-selected="true">Profile</button>
                         <button className="nav-link" id="v-pills-Character-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Character" type="button" role="tab" aria-controls="v-pills-Character" aria-selected="false">Character</button>
-                        <button className="nav-link" id="v-pills-Recharge-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Recharge" type="button" role="tab" aria-controls="v-pills-Recharge" aria-selected="false" disabled>Recharge</button>
+                        <button className="nav-link" id="v-pills-Recharge-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Recharge" type="button" role="tab" aria-controls="v-pills-Recharge" aria-selected="false">Recharge</button>
                         <button className="nav-link" type="submit" onClick={logoutHandler} aria-selected="false">Logout</button>
                     </div>
 

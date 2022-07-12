@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Card, Container } from "react-bootstrap";
 import News1 from "./News1"
 import {Helmet} from "react-helmet";
+import Auth from "./../../Auth";
 
 function NewsIndex() {
     const [judul, setJudul] = useState('');
@@ -11,15 +12,17 @@ function NewsIndex() {
     const [image_name, setImage_name] = useState('');
     const [tanggal, setTanggal] = useState('');
     const { id } = useParams();
+    const {http} = Auth();
 
     useEffect(() => {
         getNews();
     }, []);
 
     const getNews = async () => {
-        await axios
-            .get(`http://localhost:8000/api/news/${id}`)
+        await http
+            .get(`/news/${id}`)
             .then((response) => {
+                console.log(response.data)
                 setJudul(response.data.posts.judul);
                 setBerita(response.data.posts.berita);
                 setImage_name(response.data.posts.image_name);
@@ -34,13 +37,13 @@ function NewsIndex() {
     return (
         <>
             <Helmet>
-                <title>CFL | {judul}</title>
+                <title>CFL Indonesia - News - {judul}</title>
             </Helmet>
             <News1 />
             <Container fluid className="NewsIndex">
                 <Card>
-                <h1>{judul}</h1>
-                    <img src={ "http://localhost:8000/uploads/" + image_name } />
+                <h1><b>{judul}</b></h1>
+                    <img src={ "https://crossfireapi.herokuapp.com/uploads/" + image_name } />
                     <section>
                         <article dangerouslySetInnerHTML={{__html: berita}}></article>
                         <span>{getDate(Date(tanggal))}</span>

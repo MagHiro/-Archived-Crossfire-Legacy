@@ -3,8 +3,8 @@ import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Parallax } from "react-parallax";
 import RegisterParallax from "./../../assets/Register-Parallax.jpg";
-import axios from "axios";
 import Cookies from "./../../Cookies";
+import Auth from "./../../Auth";
 
 export default function Register1() {
     const navigate = useNavigate();
@@ -25,11 +25,12 @@ export default function Register1() {
         }
     }, []);
 
+    const {http} = Auth();
     const submitForm = async (e) => {
         e.preventDefault();
         // api call
         try {
-            await axios.post("http://localhost:8000/api/register", {
+            await http.post("/register", {
                 email: email,
                 password: password,
                 password_confirmation: password_confirmation,
@@ -49,8 +50,9 @@ export default function Register1() {
     return (
         <Parallax className="Register1" blur={4} bgImage={RegisterParallax} bgImageStyle={{ opacity: ".5" }}>
             <Card>
+                <form>
                 <h1 className="text-center mb-3">REGISTER PAGE</h1>
-                <form className="row justify-content-center mb-1" noValidate>
+                <div className="row justify-content-center mb-1" noValidate>
                     <div className="col">
                         <div className="form-floating mb-1">
                             <input
@@ -77,9 +79,9 @@ export default function Register1() {
                             <span>{Msg.lastname}</span>
                         </div>
                     </div>
-                </form>
+                </div>
                 
-                <form className="row justify-content-center mb-1">
+                <div className="row justify-content-center mb-1">
                     <div className="col-sm-6 Regis-Tab">
                         <div className="form-floating mb-1">
                             <input
@@ -107,9 +109,9 @@ export default function Register1() {
                             <span>{Msg.email}</span>
                         </div>
                     </div>
-                </form>
+                </div>
                 
-                <form className="row justify-content-center mb-1">
+                <div className="row justify-content-center mb-1">
                     <div className="col-sm-6 Regis-Tab">
                         <div className="form-floating mb-1">
                             <input
@@ -149,11 +151,12 @@ export default function Register1() {
                             <span>{Msg.pin}</span>
                         </div>
                     </div>
-                </form>
+                </div>
                 <section className="mb-1 ">
                     <p>Already have an account ? <a href="/signin">Sign here</a></p>
-                    <button onClick={submitForm} className="btn btn-primary">Register</button>
+                    <button onClick={submitForm} type="submit" className="btn btn-primary">Register</button>
                 </section>
+                </form>
             </Card>
         </Parallax>
     );

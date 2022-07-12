@@ -3,16 +3,15 @@ import { Parallax } from "react-parallax";
 import { Card, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import newsfoto from "./../assets/news-header.webp";
-import axios from "axios";
 import Cookies from "./../Cookies";
+import Auth from "./../Auth";
 
 function Verification() {
-  const token = Cookies.getItem("token");
+  const {http} = Auth();
   const navigate = useNavigate();
 
   const logoutHandler = async () => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    await axios.post("http://localhost:8000/api/logout").then(() => {
+    await http.post("/logout").then(() => {
       Cookies.removeItem("token");
       navigate(0);
     });

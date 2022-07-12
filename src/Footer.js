@@ -23,7 +23,7 @@ function Footer() {
                                 <Col xs={4} className="mt-4 mb-4">
                                     <iframe
                                         className="visible-lg"
-                                        src="https://discord.com/widget?id=924649291992150036&amp;theme=dark"
+                                        src="https://discord.com/widget?id=966382725797908511&amp;theme=dark"
                                         height="250"
                                         allowtransparency="true"
                                         frameBorder="0"

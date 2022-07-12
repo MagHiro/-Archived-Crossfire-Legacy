@@ -18,7 +18,7 @@ export default function Privacy() {
             >
                 <h1>Privacy Policy</h1>
             </Parallax>
-            <div class="container" id="privacy-policy-page">
+            <div className="container" id="privacy-policy-page">
                 <h1 id="privacy-policy">Privacy Policy</h1>
                 <p>
                     &emsp;&emsp;&emsp;Staff Crossfire Legacy built the Crossfire Legacy

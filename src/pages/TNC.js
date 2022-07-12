@@ -12,7 +12,7 @@ export default function TNC() {
         <Parallax className="TNC" blur={4} bgImage={newsfoto} bgImageStyle={{ opacity: ".5" }} strength={0}>
             <h1>Term And Conditions</h1>
         </Parallax>
-        <div class="container" id="terms-conditions-page">
+        <div className="container" id="terms-conditions-page">
             <p>
                 &emsp;&emsp;&emsp;By downloading or using the app, these terms
                 will automatically apply to you – you should make sure therefore

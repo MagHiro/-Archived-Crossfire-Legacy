@@ -2,15 +2,15 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Cookies from "./../../Cookies";
-import axios from "axios";
+import Auth from "./../../Auth";
 
 export default function Dashboard1Character1() {
+    const {http} = Auth();
     const [user, setUser] = useState({});
     const token = Cookies.getItem("token");
 
     const fetchData = async () => {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("http://localhost:8000/api/user").then((response) => {
+        await http.post("/me").then((response) => {
             setUser(response.data);
         });
     };
@@ -26,7 +26,7 @@ export default function Dashboard1Character1() {
     return (
     <div className="Dashboard1Character1">
         <Card>
-            <table class="table karakter-info">
+            <table className="table karakter-info">
                 <tbody>
                     <tr>
                     <th scope="row">Rank</th>

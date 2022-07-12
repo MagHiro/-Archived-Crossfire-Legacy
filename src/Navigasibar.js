@@ -4,7 +4,10 @@ import Logo from "./assets/nav-logo.png";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Auth from "./Auth";
 import Cookies from "./Cookies";
+
+const { http } = Auth();
 
 function Navigasibar() {
   const navigate = useNavigate();
@@ -16,13 +19,15 @@ function Navigasibar() {
 
   //function "fetchData"
   const fetchData = async () => {
-    //set axios header dengan type Authorization + Bearer token
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    //fetch user from Rest API
-    await axios.get("http://localhost:8000/api/user").then((response) => {
-      //set response user to state
-      setUser(response.data);
-    });
+    try {
+      await http.post("/me").then((response) => {
+        setUser(response.data);
+      });
+    } catch (error) {
+      console.clear()
+    }
+      
+
   };
   useEffect(() => {
       fetchData();   
@@ -30,8 +35,7 @@ function Navigasibar() {
 
   //function logout
   const logoutHanlder = async () => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    await axios.post("http://localhost:8000/api/logout").then(() => {
+    await http.post("/logout").then(() => {
     });
     Cookies.removeItem("token");
     navigate("/");
@@ -42,18 +46,19 @@ function Navigasibar() {
           <Container fluid>
         <Navbar.Brand href="/">
           <img
-            width="230"
-            height="50"
+            width="240"
+            height="40"
             src={Logo}
-            style={{ borderRadius: "15px", marginTop: "5px" }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto m-3 gap-3">
+          <Nav className="ms-auto gap-3">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/news">News</Nav.Link>
             <Nav.Link href="/download">Download</Nav.Link>
+            <Nav.Link href="/download" disabled>Shop</Nav.Link>
+            <Nav.Link href="/download" disabled>Rank</Nav.Link>
           </Nav>
 
           <Nav className="ms-auto m-3 gap-3">
@@ -62,11 +67,9 @@ function Navigasibar() {
                 <Button href="/register" variant="outline-secondary">
                   Sign Up
                 </Button>
-                {"  "}
                 <Button href="/signin" variant="primary">
                   Login
                 </Button>
-                {"  "}
               </>
             ) : (
               <>

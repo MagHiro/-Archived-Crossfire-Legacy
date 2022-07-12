@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Cookies from "./../../Cookies";
+import Auth from "./../../Auth";
 
 function Dashboard1Profile1UpdateProfile() {
+    const {http} = Auth();
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [password, setPassword] = useState("");
@@ -12,8 +14,8 @@ function Dashboard1Profile1UpdateProfile() {
     const token = Cookies.getItem("token");
 
     const fetchData = async () => {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        await axios.get("http://localhost:8000/api/user").then((response) => {
+
+        await http.post("/me").then((response) => {
             setUser(response.data);
         });
     };
@@ -26,7 +28,7 @@ function Dashboard1Profile1UpdateProfile() {
         e.preventDefault();
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         try {
-            await axios.post("http://localhost:8000/api/update", {
+            await http.post("/update", {
                 password: password,
                 password_confirmation: password_confirmation,
             });

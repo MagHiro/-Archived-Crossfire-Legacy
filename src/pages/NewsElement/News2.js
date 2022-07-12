@@ -2,18 +2,20 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
+import Auth from "./../../Auth";
 
 function News2() {
     const [news, setNews] = useState([]);
     const [pageCount, setPageCount] = useState(0);
+    const {http} = Auth();
 
     useEffect(() => {
         getNews();
     }, []);
 
     const getNews = async () => {
-        await axios
-            .get(`http://localhost:8000/api/index?page=1`)
+        await http
+            .get(`/index?page=1`)
             .then((response) => {
                 setPageCount(
                     Math.ceil(response.data.total / response.data.per_page)
@@ -24,8 +26,8 @@ function News2() {
 
     const handlePageClick = async (data) => {
         let currentPage = data.selected + 1;
-        await axios
-            .get(`http://localhost:8000/api/index?page=${currentPage}`)
+        await http
+            .get(`/index?page=${currentPage}`)
             .then((response) => {
                 setNews(response.data.data);
             });
@@ -38,18 +40,20 @@ function News2() {
     return (
         <Container className="News2">
             {news.map((news) => (
+                <a href={"news/" + news.id + news.judul} style={{textDecoration : 'none'}}>
                 <Card key={news.id}>
                     <img
-                        src={"http://localhost:8000/uploads/" + news.image_name}
+                        src={"https://crossfireapi.herokuapp.com/uploads/" + news.image_name}
                     />
                     <section>
                         <h2>
-                            <a href={"news/" + news.id}>{news.judul}</a>
+                            {news.judul}
                         </h2>
-                        <p dangerouslySetInnerHTML={{__html: news.berita}}></p>
+                        <p dangerouslySetInnerHTML={{__html: news.excerpt}}></p>
                         <span>{getDate(Date(news.created_at))}</span>
                     </section>
                 </Card>
+                </a>
             ))}
 
             <ReactPaginate

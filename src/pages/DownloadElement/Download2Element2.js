@@ -14,7 +14,7 @@ function Download2Element2(){
                             <tbody>
                                 <tr>
                                     <th>UKURAN CLIENT</th>
-                                    <td>NOT MEASURE</td>
+                                    <td>NOT MEASURED</td>
                                 </tr>
                                 <tr>
                                     <th>UPDATE TERAKHIR</th>
@@ -34,7 +34,7 @@ function Download2Element2(){
                             <tbody>
                                 <tr>
                                     <th>UKURAN FILE</th>
-                                    <td>NOT MEASURE</td>
+                                    <td>NOT MEASURED</td>
                                 </tr>
                                 <tr>
                                     <th>UPDATE TERAKHIR</th>

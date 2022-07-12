@@ -6,16 +6,16 @@ function Download2Element3(){
         <div className="Download2Element3">
             <Card>
                 <h1 className="mt-4">SYSTEM REQUIREMENTS</h1>
-                <div class="d-flex align-items-start">
-                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-processor-tab" data-bs-toggle="pill" data-bs-target="#v-pills-processor" type="button" role="tab" aria-controls="v-pills-processor" aria-selected="true">Processor</button>
-                        <button class="nav-link" id="v-pills-memory-tab" data-bs-toggle="pill" data-bs-target="#v-pills-memory" type="button" role="tab" aria-controls="v-pills-memory" aria-selected="false">Memory</button>
-                        <button class="nav-link" id="v-pills-videocard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-videocard" type="button" role="tab" aria-controls="v-pills-videocard" aria-selected="false">Video Card</button>
-                        <button class="nav-link" id="v-pills-storage-tab" data-bs-toggle="pill" data-bs-target="#v-pills-storage" type="button" role="tab" aria-controls="v-pills-storage" aria-selected="false">Storage</button>
-                        <button class="nav-link" id="v-pills-os-tab" data-bs-toggle="pill" data-bs-target="#v-pills-os" type="button" role="tab" aria-controls="v-pills-os" aria-selected="false">OS</button>
+                <div className="d-flex align-items-start">
+                    <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button className="nav-link active" id="v-pills-processor-tab" data-bs-toggle="pill" data-bs-target="#v-pills-processor" type="button" role="tab" aria-controls="v-pills-processor" aria-selected="true">Processor</button>
+                        <button className="nav-link" id="v-pills-memory-tab" data-bs-toggle="pill" data-bs-target="#v-pills-memory" type="button" role="tab" aria-controls="v-pills-memory" aria-selected="false">Memory</button>
+                        <button className="nav-link" id="v-pills-videocard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-videocard" type="button" role="tab" aria-controls="v-pills-videocard" aria-selected="false">Video Card</button>
+                        <button className="nav-link" id="v-pills-storage-tab" data-bs-toggle="pill" data-bs-target="#v-pills-storage" type="button" role="tab" aria-controls="v-pills-storage" aria-selected="false">Storage</button>
+                        <button className="nav-link" id="v-pills-os-tab" data-bs-toggle="pill" data-bs-target="#v-pills-os" type="button" role="tab" aria-controls="v-pills-os" aria-selected="false">OS</button>
                     </div>
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-processor" role="tabpanel" aria-labelledby="v-pills-processor-tab" tabindex="0">
+                    <div className="tab-content" id="v-pills-tabContent">
+                        <div className="tab-pane fade show active" id="v-pills-processor" role="tabpanel" aria-labelledby="v-pills-processor-tab" tabIndex="0">
                                     
                             <ul>
                                 <li>Minimum:</li>
@@ -32,7 +32,7 @@ function Download2Element3(){
                             </ul>
                                         
                         </div>
-                        <div class="tab-pane fade" id="v-pills-memory" role="tabpanel" aria-labelledby="v-pills-memory-tab" tabindex="0">
+                        <div className="tab-pane fade" id="v-pills-memory" role="tabpanel" aria-labelledby="v-pills-memory-tab" tabIndex="0">
                     
                             <ul>
                                 <li>Minimum:<br/>4 GB</li>
@@ -41,7 +41,7 @@ function Download2Element3(){
                                 <li>Recommended:<br/> 8 GB</li>
                             </ul>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-videocard" role="tabpanel" aria-labelledby="v-pills-videocard-tab" tabindex="0">
+                        <div className="tab-pane fade" id="v-pills-videocard" role="tabpanel" aria-labelledby="v-pills-videocard-tab" tabIndex="0">
                             <ul>
                                 <li>Minimum:</li>
                                 <li>NVIDIA® GeForce® 9500 GT</li>
@@ -55,7 +55,7 @@ function Download2Element3(){
                                 <li>Intel® HD Graphics 6000</li>
                             </ul>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-storage" role="tabpanel" aria-labelledby="v-pills-storage-tab" tabindex="0">
+                        <div className="tab-pane fade" id="v-pills-storage" role="tabpanel" aria-labelledby="v-pills-storage-tab" tabIndex="0">
                             <ul>
                                 <li>Minimum:</li>
                                 <li>15 GB of free space</li>
@@ -65,7 +65,7 @@ function Download2Element3(){
                                 <li>25 GB of free space</li>
                             </ul>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-os" role="tabpanel" aria-labelledby="v-pills-os-tab" tabindex="0">
+                        <div className="tab-pane fade" id="v-pills-os" role="tabpanel" aria-labelledby="v-pills-os-tab" tabIndex="0">
                             <ul>
                                 <li>Minimum: </li>
                                 <li>Windows 7 32-bit</li>

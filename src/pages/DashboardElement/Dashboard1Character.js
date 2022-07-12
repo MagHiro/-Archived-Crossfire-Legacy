@@ -21,8 +21,8 @@ function Dashboard1Character() {
             </ul>
 
             <div className="tab-content" id="myTabContent">
-                <div className="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><Dashboard1Character1 /></div>
-                {/* <div className="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabindex="0"><Dashboard1Profile1UpdateProfile /></div> */}
+                <div className="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0"><Dashboard1Character1 /></div>
+                {/* <div className="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabIndex="0"><Dashboard1Profile1UpdateProfile /></div> */}
             </div>
 
         </div>

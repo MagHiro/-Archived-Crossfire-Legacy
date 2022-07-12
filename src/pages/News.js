@@ -7,7 +7,7 @@ function News() {
     return (
     <>    
         <Helmet>
-            <title>CFL News</title>
+            <title>CFL Indonesia - News Page</title>
         </Helmet>
         <News1 />   
         <News2 />

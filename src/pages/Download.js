@@ -16,15 +16,15 @@ function Download() {
     });
 
     return (
-        <>
+        <div style={{minHeight : '100vh'}}>
             <Helmet>
-                <title>CFL Download</title>
+                <title>CFL Indonesia - Download</title>
             </Helmet>
             <Download1 />
             <div style={{height : '100%'}}>
             <Download2 />
             </div>
-        </>
+        </div>
     );
 }
 

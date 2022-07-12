@@ -1,35 +1,26 @@
 import React from 'react';
-import { Parallax } from 'react-parallax';
-import FirstParallax from "./../../assets/FirstParallax.webp";
 import { Container, Button } from 'react-bootstrap';
 
 function Home1() {
     return (
-        <Parallax
-            blur={4}
-            bgImage={FirstParallax}
-            bgImageStyle={{ opacity: ".5" }}
-            strength={0}
-        >
+        <>
+            <div className='Home1-bg'></div>
             <Container fluid className="Home1">
                     <h1>
-                        <span style={{ color: "white" }}>Forget you're</span>
-                        <span style={{ color: "#dd7c35" }}>somewhere else</span>
+                        <span style={{ color: "white" }}>Nostalgia never</span>
+                        <span style={{ color: "#dd7c35" }}>Felt so good</span>
                     </h1>
 
                     <p>
-                        CrossFire Legacy will giving you a pleasure you’ll
-                        actually love, in fastest way, no DDOS, no VPN. Connect
-                        to people, games, or relation whenever you ready,
-                        whenever you want. Accomplish thousand of journey you
-                        will face off.
+                        <b>CrossFire Legacy</b> is crossfire private server developed by Indonesian community for community. Established upon numerous features, <b><i>No VPN, No DDOS</i></b>, Fastest possible server to play.
                     </p>
 
                     <Button href="/download" variant="outline-light">
                         PLAY NOW
                     </Button>
             </Container>
-        </Parallax>
+        </>
+        
     );
 }
 
